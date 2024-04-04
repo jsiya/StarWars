@@ -1,0 +1,33 @@
+*{
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+.film-icon{
+    width: 70px;
+    cursor:default;
+}
+.films{
+    padding: 50px;
+    width: 90%;
+}
+.films-list{
+    display: grid;
+    gap: 3rem;
+    grid-template-columns: repeat(3, 1fr);
+}
+.film{
+    border-radius: 12px;
+    display: flex;
+    gap: 10%;
+}
+.film:hover{
+    cursor: pointer;
+    background-color: rgba(232, 202, 93, 0.474);
+}
+.films div{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10%;
+}
