@@ -5,12 +5,12 @@ import { filmsReducer } from "./reducers/films";
 import { speciesReducer } from "./reducers/species";
 import { starshipsReducer } from "./reducers/starships";
 import { vehiclesReducer } from "./reducers/vehicles";
-import { peopleAPI } from "../services/PeopleService";
-import { planetsAPI } from "../services/PlanetService";
-import { vehiclesAPI } from "../services/VehicleService";
-import { starshipsAPI } from "../services/StarshipService";
-import { filmsAPI } from "../services/FilmService";
-import { speciesAPI } from "../services/SpeciesService";
+import { peopleAPI, personAPI } from "../services/PeopleService";
+import { planetAPI, planetsAPI } from "../services/PlanetService";
+import { vehicleAPI, vehiclesAPI } from "../services/VehicleService";
+import { starshipAPI, starshipsAPI } from "../services/StarshipService";
+import { filmAPI, filmsAPI } from "../services/FilmService";
+import { specieAPI, speciesAPI } from "../services/SpeciesService";
 
 
 const rootReducer = combineReducers({
@@ -25,7 +25,15 @@ const rootReducer = combineReducers({
     [vehiclesAPI.reducerPath]: vehiclesAPI.reducer,
     [starshipsAPI.reducerPath]: starshipsAPI.reducer,
     [filmsAPI.reducerPath]: filmsAPI.reducer,
-    [speciesAPI.reducerPath]: speciesAPI.reducer
+    [speciesAPI.reducerPath]: speciesAPI.reducer,
+
+
+    [filmAPI.reducerPath]: filmAPI.reducer,
+    [personAPI.reducerPath]: personAPI.reducer,
+    [planetAPI.reducerPath]: planetAPI.reducer,
+    [specieAPI.reducerPath]: specieAPI.reducer,
+    [starshipAPI.reducerPath]: starshipAPI.reducer,
+    [vehicleAPI.reducerPath]: vehicleAPI.reducer
 });
 
 const configureMiddleware = [
@@ -34,7 +42,15 @@ const configureMiddleware = [
     vehiclesAPI.middleware,
     speciesAPI.middleware,
     filmsAPI.middleware,
-    starshipsAPI.middleware
+    starshipsAPI.middleware,
+
+
+    filmAPI.middleware,
+    personAPI.middleware,
+    planetAPI.middleware,
+    specieAPI.middleware,
+    starshipAPI.middleware,
+    vehicleAPI.middleware
 ]
 
 export const setupStore = () => {

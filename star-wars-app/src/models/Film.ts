@@ -2,7 +2,7 @@ import { Person } from "./Person";
 import { Planet } from "./Planet";
 import { Starship } from "./Starship";
 import { Vehicle } from "./Vehicle";
-import { Species } from "./species";
+import { Species } from "./Species";
 
 export interface Film{
     title: string,
@@ -10,7 +10,7 @@ export interface Film{
     opening_crawl: string,
     director: string,
     producer: string,
-    relase_date: string,
+    release_date: string,
     planets: Planet[], 
     characters: Person[],
     species: Species[],

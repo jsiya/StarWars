@@ -1,5 +1,6 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { IVehicles } from "../store/reducers/vehicles";
+import { Vehicle } from "../models/Vehicle";
 
 
 export const vehiclesAPI = createApi({
@@ -18,3 +19,15 @@ export const vehiclesAPI = createApi({
         })
     }),
 })
+
+export const vehicleAPI = createApi({
+    reducerPath: 'vehicle',
+    baseQuery: fetchBaseQuery({baseUrl: 'https://swapi.dev/api/'}),
+    endpoints: (build) => ({
+      fetchVehicle: build.query<Vehicle, number | null>({
+        query: (id: number | null = null) => ({
+          url: id != null ? `vehicles/${id}/` : 'vehicles/'
+        })
+      })
+    }),
+  })

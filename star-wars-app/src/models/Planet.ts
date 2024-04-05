@@ -3,9 +3,9 @@ import { Person } from "./Person"
 
 export interface Planet{
     name: string,
-    rotationPeriod: string,
-    orbitalPeriod: string
-    diametr: string,
+    rotation_period: string,
+    orbital_period: string
+    diameter: string,
     climate: string,
     gravity: string,
     terrain: string,

@@ -6,14 +6,37 @@
     justify-content: center;
     align-items: center;
   }
+  .info-sec{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
   
   .modalContainer {
-    width: 500px;
+    width: 700px;
     height: 500px;
     border-radius: 12px;
     background-color: rgb(34, 33, 33);
     box-shadow: rgba(196, 190, 164, 0.547) 0px 0px 50px;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     padding: 25px;
+    align-items: center;
   }
+  .main-sec{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+  .close-btn{
+    cursor: pointer;
+    background-color: rgba(165, 42, 42, 0.685);
+    border: 0px;
+    border-radius: 12px;
+    padding: 10px;
+    width: 50%;
+  }
+.close-btn:hover{
+  box-shadow: rgba(165, 42, 42, 0.197) 0px 0px 50px;
+}

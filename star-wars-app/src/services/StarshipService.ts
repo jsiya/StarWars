@@ -1,5 +1,6 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { IStarships } from "../store/reducers/starships";
+import { Starship } from "../models/Starship";
 
 
 export const starshipsAPI = createApi({
@@ -18,3 +19,15 @@ export const starshipsAPI = createApi({
         })
     }),
 })
+
+export const starshipAPI = createApi({
+    reducerPath: 'starship',
+    baseQuery: fetchBaseQuery({baseUrl: 'https://swapi.dev/api/'}),
+    endpoints: (build) => ({
+      fetchStarship: build.query<Starship, number | null>({
+        query: (id: number | null = null) => ({
+          url: id != null ? `starships/${id}/` : 'starships/'
+        })
+      })
+    }),
+  })

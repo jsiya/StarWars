@@ -1,5 +1,6 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { ISpecies } from "../store/reducers/species";
+import { Species } from "../models/Species";
 
 
 export const speciesAPI = createApi({
@@ -18,3 +19,15 @@ export const speciesAPI = createApi({
         })
     }),
 })
+
+export const specieAPI = createApi({
+    reducerPath: 'specie',
+    baseQuery: fetchBaseQuery({baseUrl: 'https://swapi.dev/api/'}),
+    endpoints: (build) => ({
+      fetchSpecie: build.query<Species, number | null>({
+        query: (id: number | null = null) => ({
+          url: id != null ? `species/${id}/` : 'species/'
+        })
+      })
+    }),
+  })
