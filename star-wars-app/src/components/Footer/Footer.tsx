@@ -26,7 +26,7 @@ function Footer() {
 
         </div>
         <div>
-            <p className='copyright'>Copyright© 2023 Star Wars</p>
+            <p className='copyright'>Copyright© 2024 Star Wars</p>
         </div>
     </div>
   )
