@@ -25,3 +25,76 @@ body {
     background-color: #ffffff;
   }
 }
+
+.loadmore-btn{
+  padding: 20px;
+  font-size: 18px;
+  border-radius: 12px;
+  border: 0px;
+  background-color: rgba(238, 176, 84, 0.509);
+  color: #242424;
+}
+.loadmore-btn:hover{
+  cursor: pointer;
+  background-color: rgba(238, 176, 84);
+  box-shadow: rgba(196, 190, 164, 0.547) 0px 0px 50px;
+}
+.card{
+  border-radius: 12px;
+  display: flex;
+  gap: 10%;
+  background-color: rgba(59, 59, 57, 0.33);
+  min-height: 150px;
+  align-items: center;
+  padding: 5px 20px;
+}
+.card:hover{
+  cursor: pointer;
+  background-color: rgba(232, 202, 93, 0.474);
+  box-shadow: rgba(196, 190, 164, 0.547) 0px 0px 50px;
+}
+.moreinfo-btn{
+  width: 100%;
+  border-radius: 12px;
+  border: 0px;
+  padding: 10px;
+  color: rgba(238, 176, 84);
+  background-color: rgba(27, 27, 25, 0.886);
+}
+.moreinfo-btn:hover{
+  box-shadow: rgba(39, 36, 24, 0.967) 0px 0px 20px;
+}
+.card-icon{
+  width: 80px;
+  height:min-content;
+  cursor:default;
+}
+.card-sec{
+  padding: 50px;
+  width: 90%;
+}
+.card-list{
+  display: grid;
+  gap: 3rem;
+  grid-template-columns: repeat(3, 1fr);
+}
+.inner-card{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  width: 100%;
+}
+
+.preview-info-sec{
+  display: flex;
+  gap: 5px;
+}
+.label{
+  font-size: 17px;
+  font-weight: 500;
+  color: rgb(238, 177, 84);
+}
+.field{
+  color: rgb(132, 127, 107);
+}

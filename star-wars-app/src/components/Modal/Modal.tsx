@@ -43,6 +43,42 @@ function Modal({ closeModal, data }: ModalProps) {
         </div>
       );
     }
+    if (isStarship(data)) {
+      return (
+        <div className="modalContainer">
+          <h2>More Info</h2>
+          <p>Name: {data.name}</p>
+          <button onClick={() => closeModal(false)}>Close</button>
+        </div>
+      );
+    }
+    if (isVehicle(data)) {
+      return (
+        <div className="modalContainer">
+          <h2>More Info</h2>
+          <p>Name: {data.name}</p>
+          <button onClick={() => closeModal(false)}>Close</button>
+        </div>
+      );
+    }
+    if (isSpecies(data)) {
+      return (
+        <div className="modalContainer">
+          <h2>More Info</h2>
+          <p>Name: {data.name}</p>
+          <button onClick={() => closeModal(false)}>Close</button>
+        </div>
+      );
+    }
+    if (isFilm(data)) {
+      return (
+        <div className="modalContainer">
+          <h2>More Info</h2>
+          <p>Name: {data.title}</p>
+          <button onClick={() => closeModal(false)}>Close</button>
+        </div>
+      );
+    }
 
     return (
       <div className="modalContainer">

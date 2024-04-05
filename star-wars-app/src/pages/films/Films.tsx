@@ -52,23 +52,29 @@ function Films() {
       <>
         {isLoading && <img className='loading-logo' src={loadingLogo}/>}
 
-<div className="films">
-  <ul className="films-list">
+<div className="card-sec">
+  <ul className="card-list">
     {
       films?.map((film, index) => (
-        <li key={index} className="film">
-          <img className="film-icon" src={filmIcon} alt="" />
-          <div>
-            <p>Name: {film.title}</p>
-            <p>Created: {film.created.substring(0, 10)}</p>
-            <button onClick={() => handleMoreInfoClick(film)}>More Info</button>
+        <li key={index} className="card">
+          <img className="card-icon" src={filmIcon} alt="" />
+          <div className='inner-card'>
+          <div className="preview-info-sec">
+                      <p className="label">Name:</p>
+                      <p className="field">{film.title}</p>
+                    </div>
+                    <div className="preview-info-sec">
+                      <p className="label">Director:</p>
+                      <p className="field">{film.director}</p>
+                    </div>
+            <button className='moreinfo-btn' onClick={() => handleMoreInfoClick(film)}>More Info</button>
             </div>
         </li>
       ))
     }
   </ul>
 </div>
-{page < maxPage && <button onClick={handleLoadMore}>Load More</button>}
+{page < maxPage && <button className='loadmore-btn'  onClick={handleLoadMore}>Load More</button>}
 
 {/* Modal */}
 {showModal && <Modal closeModal={setShowModal} data={selectedFilm}/>}

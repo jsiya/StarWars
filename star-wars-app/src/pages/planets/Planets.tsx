@@ -53,23 +53,29 @@ function Planets() {
       <>
         {isLoading && <img className='loading-logo' src={loadingLogo}/>}
 
-        <div className="planets">
-          <ul className="planets-list">
+        <div className="card-sec">
+          <ul className="card-list">
             {
               planets?.map((planet, index) => (
-                <li key={index} className="planet">
-                  <img className="planet-icon" src={planetIcon} alt="" />
-                  <div>
-                    <p>Name: {planet.name}</p>
-                    <p>Created: {planet.created.substring(0, 10)}</p>
-                    <button onClick={() => handleMoreInfoClick(planet)}>More Info</button>
+                <li key={index} className="card">
+                  <img className="card-icon" src={planetIcon} alt="" />
+                  <div className="inner-card">
+                    <div className="preview-info-sec">
+                      <p className="label">Name:</p>
+                      <p className="field">{planet.name}</p>
+                    </div>
+                    <div className="preview-info-sec">
+                      <p className="label">Population:</p>
+                      <p className="field">{planet.population}</p>
+                    </div>
+                    <button className='moreinfo-btn' onClick={() => handleMoreInfoClick(planet)}>More Info</button>
                     </div>
                 </li>
               ))
             }
           </ul>
         </div>
-        {page < maxPage && <button onClick={handleLoadMore}>Load More</button>}
+        {page < maxPage && <button className='loadmore-btn' onClick={handleLoadMore}>Load More</button>}
           
         {/* Modal */}
         {showModal && <Modal closeModal={setShowModal} data={selectedPlanet}/>}

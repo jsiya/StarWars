@@ -50,23 +50,29 @@ function Species() {
     <>
       {isLoading && <img className='loading-logo' src={loadingLogo}/>}
 
-      <div className="species">
-        <ul className="species-list">
+      <div className="card-sec">
+        <ul className="card-list">
           {
             species?.map((specie, index) => (
-              <li key={index} className="specie">
-                <img className="species-icon" src={speciesIcon} alt="" />
-                <div>
-                  <p>Name: {specie.name}</p>
-                  <p>Created: {specie.created.substring(0, 10)}</p>
-                  <button onClick={() => handleMoreInfoClick(specie)}>More Info</button>
+              <li key={index} className="card">
+                <img className="card-icon" src={speciesIcon} alt="" />
+                <div className="inner-card">
+                <div className="preview-info-sec">
+                      <p className="label">Name:</p>
+                      <p className="field">{specie.name}</p>
+                    </div>
+                    <div className="preview-info-sec">
+                      <p className="label">Classification:</p>
+                      <p className="field">{specie.classification}</p>
+                    </div>
+                  <button className='moreinfo-btn' onClick={() => handleMoreInfoClick(specie)}>More Info</button>
                   </div>
               </li>
             ))
           }
         </ul>
       </div>
-      {page < maxPage && <button onClick={handleLoadMore}>Load More</button>}
+      {page < maxPage && <button className='loadmore-btn' onClick={handleLoadMore}>Load More</button>}
         
       {/* Modal */}
       {showModal && <Modal closeModal={setShowModal} data={selectedItem}/>}

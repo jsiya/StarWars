@@ -55,23 +55,29 @@ useEffect(() => {
       <>
         {isLoading && <img className='loading-logo' src={loadingLogo}/>}
 
-        <div className="vehicles">
-          <ul className="vehicles-list">
+        <div className="card-sec">
+          <ul className="card-list">
             {
               vehicles?.map((vehicle, index) => (
-                <li key={index} className="vehicle">
-                  <img className="vehicle-icon" src={vehicleIcon} alt="" />
-                  <div>
-                    <p>Name: {vehicle.name}</p>
-                    <p>Created: {vehicle.created.substring(0, 10)}</p>
-                    <button onClick={() => handleMoreInfoClick(vehicle)}>More Info</button>
+                <li key={index} className="card">
+                  <img className="card-icon" src={vehicleIcon} alt="" />
+                  <div className="inner-card">
+                  <div className="preview-info-sec">
+                      <p className="label">Name:</p>
+                      <p className="field">{vehicle.name}</p>
+                    </div>
+                    <div className="preview-info-sec">
+                      <p className="label">Model:</p>
+                      <p className="field">{vehicle.model}</p>
+                    </div>
+                    <button className='moreinfo-btn' onClick={() => handleMoreInfoClick(vehicle)}>More Info</button>
                     </div>
                 </li>
               ))
             }
           </ul>
         </div>
-        {page < maxPage && <button onClick={handleLoadMore}>Load More</button>}
+        {page < maxPage && <button className='loadmore-btn' onClick={handleLoadMore}>Load More</button>}
           
         {/* Modal */}
         {showModal && <Modal closeModal={setShowModal} data={selectedItem}/>}

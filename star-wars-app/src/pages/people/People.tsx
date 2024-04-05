@@ -52,23 +52,29 @@ function People() {
       <>
         {isLoading && <img className='loading-logo' src={loadingLogo}/>}
 
-        <div className="people">
-          <ul className="people-list">
+        <div className="card-sec">
+          <ul className="card-list">
             {
               people?.map((person, index) => (
-                <li key={index} className="person">
-                  <img className="character-icon" src={characterIcon} alt="" />
-                  <div>
-                    <p>Name: {person.name}</p>
-                    <p>Created: {person.created.substring(0, 10)}</p>
-                    <button onClick={() => handleMoreInfoClick(person)}>More Info</button>
+                <li key={index} className="card">
+                  <img className="card-icon" src={characterIcon} alt="" />
+                  <div className="inner-card">
+                  <div className="preview-info-sec">
+                      <p className="label">Name:</p>
+                      <p className="field">{person.name}</p>
+                    </div>
+                    <div className="preview-info-sec">
+                      <p className="label">Gender:</p>
+                      <p className="field">{person.gender}</p>
+                    </div>
+                    <button className='moreinfo-btn' onClick={() => handleMoreInfoClick(person)}>More Info</button>
                     </div>
                 </li>
               ))
             }
           </ul>
         </div>
-        {page < maxPage && <button onClick={handleLoadMore}>Load More</button>}
+        {page < maxPage && <button className='loadmore-btn' onClick={handleLoadMore}>Load More</button>}
 
         {/* Modal */}
         {showModal && <Modal closeModal={setShowModal} data={selectedPerson}/>}

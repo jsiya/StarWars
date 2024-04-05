@@ -53,23 +53,29 @@ function Starships() {
       <>
         {isLoading && <img className='loading-logo' src={loadingLogo}/>}
 
-        <div className="starships">
-          <ul className="starships-list">
+        <div className="card-sec">
+          <ul className="card-list">
             {
               starships?.map((starship, index) => (
-                <li key={index} className="starship">
-                  <img className="starship-icon" src={starshipIcon} alt="" />
-                  <div>
-                    <p>Name: {starship.name}</p>
-                    <p>Created: {starship.created.substring(0, 10)}</p>
-                    <button onClick={() => handleMoreInfoClick(starship)}>More Info</button>
+                <li key={index} className="card">
+                  <img className="card-icon" src={starshipIcon} alt="" />
+                  <div className="inner-card">
+                  <div className="preview-info-sec">
+                      <p className="label">Name:</p>
+                      <p className="field">{starship.name}</p>
+                    </div>
+                    <div className="preview-info-sec">
+                      <p className="label">Model:</p>
+                      <p className="field">{starship.model}</p>
+                    </div>
+                    <button className='moreinfo-btn' onClick={() => handleMoreInfoClick(starship)}>More Info</button>
                     </div>
                 </li>
               ))
             }
           </ul>
         </div>
-        {page < maxPage && <button onClick={handleLoadMore}>Load More</button>}
+        {page < maxPage && <button className='loadmore-btn' onClick={handleLoadMore}>Load More</button>}
           
         {/* Modal */}
         {showModal && <Modal closeModal={setShowModal} data={selectedItem}/>}

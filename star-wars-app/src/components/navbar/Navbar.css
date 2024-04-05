@@ -32,6 +32,7 @@ li{
 }
 .nav-item:hover{
     color: rgb(238, 177, 84);
+    text-shadow: 0px 0px 10px #f4d684a2;;
 }
 .search-sec{
     display: flex;
@@ -39,6 +40,9 @@ li{
     justify-content: center;
     background-color: rgba(26, 25, 25, 0.508);
     border-radius: 12px;
+}
+.search-sec:hover{
+    box-shadow: rgba(196, 190, 164, 0.547) 0px 0px 50px;
 }
 .search-sec input[type=text]{
     border-top-right-radius: 0px;
@@ -48,8 +52,6 @@ li{
     border: 5px;
     height: 30px;
     min-width: 200px;
-
-
     background-color: rgba(26, 25, 25, 0.508);
 }
 .search-sec input[type=text]:focus {
